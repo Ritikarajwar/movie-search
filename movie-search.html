@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="new.css">
+    
+    </style>
+</head>
+<body>
+
+    <input type="text" placeholder="search">
+    <button>submit</button>
+    <div id="wrapper">
+        
+    </div>
+
+
+    <script>
+// https://api.themoviedb.org/3/search/movie?query=barbie&include_adult_false&language-en-US&page_1&api_key=03584a3c72abd629f457f9ceb06b3b8d
+
+
+    let input=document.querySelector('input')
+    let button=document.querySelector('button')
+    let wrapper=document.querySelector('#wrapper')
+    button.onclick=(()=>{
+        fetch("https://api.themoviedb.org/3/search/movie?query="+input.value+"&include_adult=false&language-en-US&page_1&api_key=03584a3c72abd629f457f9ceb06b3b8d").then((responce)=>{
+            return responce.json()
+        })
+        .then((result)=>{
+            showdata(result.results)
+        })
+    })
+    function showdata(data){
+        console.log(data)
+        
+        for (let i=0;i<data.length;i++){
+            let div=document.createElement('div')
+            let title=document.createElement('h4')
+            div.className='movies'
+            let image =document.createElement('img')
+            image.src = 'https://image.tmdb.org/t/p/original' + data[i].poster_path
+            // title.innerHTML=data[i].title
+            // console.log(title.innerHTML)
+            
+            div.append(image)
+            wrapper.append(div)
+        }
+    }
+    
+    
+    </script>
+</body>
+</html>
