@@ -3,6 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+.inputs{
+    text-align: center;
+}
+
+ input{
+    /* margin-left: 450px; */
+    /* margin-top: 5px; */
+    /* text-align: center; */
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 15px;
+}
+button{
+    padding: 10px ;
+    border-radius: 8PX;
+}
 
 #wrapper{
     /* margin-top: 1%; */
@@ -20,6 +36,6 @@
     box-shadow: 1px 1px 6px 1px gray;
     /* border: 1px solid; */
     border-radius: 10px;
-    height: 90%;
+    height: 70%;
     width: 100%;
 }
